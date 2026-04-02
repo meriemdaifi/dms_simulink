@@ -443,9 +443,6 @@ fprintf('  [5/5] Top-level wiring complete.\n');
 %  Simulink's MATLAB Function blocks require their script to be set via the
 %  Stateflow API after the model is fully constructed.
 
-% --- Helper to set MATLAB Function script --------------------------------
-setMatlabFcnScript = @(blkPath, script) setMATLABFunctionScript(blkPath, script);
-
 % Drowsiness Estimator
 drowsyCode = sprintf([...
     'function score = DrowsinessEstimator(perclos, blinkDur, headPitch, yawnFlag)\n' ...
@@ -689,11 +686,3 @@ catch
 end
 
 fprintf('\nDMS ADAS Project complete.\n');
-
-%% ========================================================================
-%  Local Functions
-%  ========================================================================
-
-function setMATLABFunctionScript(~, ~)
-    % Placeholder - actual script setting is done via sfroot above
-end
